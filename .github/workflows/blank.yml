@@ -17,5 +17,5 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: ./resume.pdf
         asset_name: resume.pdf
-        tag: ${{ github.ref }}
+        tag: latest
         overwrite: true
