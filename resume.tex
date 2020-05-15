@@ -1,0 +1,257 @@
+\documentclass[hidelinks,11pt]{extarticle}
+
+\usepackage{lstfiracode}
+%\usepackage[default]{sourcecodepro}
+%\usepackage{fontenc}
+%\usepackage{helvet}
+\usepackage{titlesec}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage[inline]{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\pagenumbering{gobble}
+
+\newlist{citemize}{itemize}{1}
+\setlist[citemize]{label=\textcolor{itemizecolor}{\textbullet},topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*}
+
+\newlist{citemize*}{itemize*}{1}
+\setlist[citemize*]{label=\textcolor{itemizecolor}{\textbullet},topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,leftmargin=*}
+
+\renewcommand{\familydefault}{\sfdefault}
+\definecolor{mycolor}{RGB}{11, 83, 148}
+%\definecolor{mycolor}{RGB}{200, 83, 100}
+
+\colorlet{itemizecolor}{mycolor}
+
+\let\boringbullet\bullet
+\renewcommand{\bullet}{\color{mycolor}{\boringbullet}}
+
+%\let\boringtitlerule\titlerule
+%\renewcommand{\titlerule}{\color{mycolor}{\titlerule}}
+
+
+\titleformat{\section}
+{\large\bfseries\color{mycolor}}
+{}
+{0em}
+{}[\titlerule]
+
+\titleformat{\subsection}
+{\large\bfseries}
+{}
+{0em}
+{}
+
+\titlespacing{\section}
+{0pt}
+{5pt}
+{7pt}
+
+\titlespacing{\item}
+{0pt}
+{1pt}
+{1pt}
+
+% usage: \school{Name}{Location}
+\newcommand{\school}[4]{
+	{\textbf{#1
+    $\bullet$
+     #3
+    }}
+	\hfill{
+        {\small#2
+    $\bullet$
+    #4}
+    }
+}
+
+\newcommand{\position}[5]{
+    {\textbf{#1}} $\bullet$ {\textbf{#2}}
+	\hfill{\small#4 $\bullet$ #3}
+    \begin{citemize}
+        #5
+    \end{citemize}
+}
+
+\newcommand{\project}[3] {
+    \textbf{#1} 
+%    \hfill {\small#2}
+    \begin{citemize}
+    #3
+    \end{citemize}
+}
+
+\newcommand{\skillset}[2] {
+    \textbf{#1}
+    \hfill
+    \begin{citemize*}
+        #2
+    \end{citemize*}
+}
+
+\begin{document}
+
+\flushleft
+{\Huge\bfseries{\color{mycolor}{Adrian Herath}}}
+
+{\small
+\href{https://github.com/adrianisuru/}{github.com/adrianisuru}
+$\bullet$ %
+\href{https://www.linkedin.com/in/adrianisuru/}{linkedin.com/in/adrianisuru}
+$\bullet$ %
+\href{mailto:me@example.com}{me@example.com} %
+$\bullet$ %
+\href{tel:+1000-000-0000}{(000) 000 0000} %
+}
+\section{Experience}
+
+\position
+{Subawu+}
+{Software Architect}
+{Aug 19 {\color{mycolor}/} Dec 19}
+{Urbana, IL}
+{
+\item Designed containerized architecture for a mobile platform which connects 
+    students to study partners
+\item Bootstrapped kubernetes cluster for easy deployment (Helm, CertManager, nginx)
+}
+
+\position
+{Fulcrum GT}
+{Junior Associate}
+{May 19 {\color{mycolor}/} Aug 19}
+{Chicago, IL}
+{
+    \item Designed and built Java backend which interfaced with 
+            the Amadeus API 
+    for a mobile app which suggests
+        flights and hotels based on individual preferences, company policy,
+        and team requirements 
+    which was presented at ILTACON, the premier educational and networking 
+        event for the legal sector (Java/Dropwizard, Postgres, REST)
+    \item Deployed product website and backend on kubernetes (Docker, Kubernetes)
+}
+
+\position
+{Fulcrum GT}
+{Summer Associate}
+{May 18 {\color{mycolor}/} Aug 18}
+{Chicago, IL}
+{
+    \item Built user registration / login system for a Flask backend 
+    for a web app which helps users appeal their property tax assessment 
+    which was presented at ILTACON (Python/Flask, Postgres, REST)
+    \item Deployed webapp frontend and backend on kubernetes (Docker, Kubernetes)
+}
+
+\position
+{CS 126}
+{TA}
+{Aug 18 {\color{mycolor}/} Oct 19}
+{Urbana, IL}
+{
+    \item Led discussions of student code with emphasis on style, design, and
+        testing in weekly code review sessions of 6 students
+    \item Helped students with Java/C++ toolchain, git, and bash command line in
+        office hours
+}
+
+
+\section{Projects}
+
+\project{Essential Tasks ToDo List}{Dart}
+{
+    \item Flutter based app built for roommate who suffers from an executive 
+        function disorder and poor working memory to help keep track of essential 
+        tasks such as eating and bathing (Flutter, SQLite)
+    \item App state is saved locally (SQLite)
+}
+
+\project{Esim}{Java}
+{
+    \item 3D Coulomb's Law visualization built for physics teacher (Java, OpenGL/GLSL)
+    \item Allows users to place point charges in a plane and see a 3D graph of the
+        electric potential at each point in the plane
+}
+
+\project{Julia Set Explorer}{Rust}
+{
+    \item Julia set viewer with pan and zoom capabilities (Rust, OpenGL/GLSL)
+    \item Fractal is colored by OpenGL shaders to maximize performace (GLSL)
+    \item Contributed a pull request to glium/glium
+}
+
+\project{Genetic Algorithm Image Evolution}{C++}
+{
+    \item Genetic algorithm which recreates a user provide image using simple 
+        shapes (C++, openFrameworks)
+}
+
+
+%\vfill
+
+\section{Education}
+\school
+{University of Illinois}
+{Urbana, Champaign}
+{Mathematics and Computer Science}
+{2021}
+\\
+\textbf{Coursework:} 
+\begin{citemize*}
+    \item[] Data Structures 
+    \item Algorithms 
+    \item Software Design Studio 
+    \item Models of Computation 
+    \item Abstract Linear Algebra 
+    \item Probability Theory 
+    \item Graph Theory 
+    \item Real Analysis 
+\end{citemize*}
+
+\textbf{Extracurriculars:} 
+\begin{citemize*}
+    \item[] Siebel Hacks (CoFounder and Treasurer) 
+    \item Varsity Men's Glee Club (Baritone)
+\end{citemize*}
+
+%\textit{Minor, Music}
+%\hfill{gpa: 3.12}
+%\vspace{0.5em}
+%\vfill
+
+
+\section{Technical Skills}
+\skillset{Languages}
+{
+    \item[] Java 
+    \item C++ 
+    \item Python 
+    \item Rust
+    \item Dart
+}
+
+\skillset{Frameworks}
+{
+    \item[] Flask
+    \item OpenGL/GLSL
+    \item Dropwizard
+    \item Flutter
+}
+
+\skillset{Other}
+{
+    \item[] Linux
+    \item Docker
+    \item Kubernetes
+    \item \LaTeX
+    \item SQL
+}
+
+\vfill
+{\color{mycolor}\titlerule}
+\end{document}
+
