@@ -3,7 +3,5 @@
 
 This resume is written in [LaTeX](https://www.latex-project.org/) 
 which is compiled to pdf by [github actions](https://github.com/features/actions)
-then rendered by gview
-
-[go](http://stackoverflow.com){:target="_blank" rel="noopener"}
+then rendered by Google Drive.
 
