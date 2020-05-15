@@ -17,5 +17,6 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: ./resume.pdf
         asset_name: resume.pdf
+        asset_content_type: application/pdf
         tag: latest
         overwrite: true
