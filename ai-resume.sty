@@ -50,6 +50,14 @@
 {1pt}
 {1pt}
 
+\newcommand{\email}[1]{
+    \href{mailto:#1}{#1}
+}
+
+\newcommand{\phone}[4]{
+    \href{tel:+#1#2-#3-#4}{(#2) #3 #4}
+}
+
 % usage: \school{Name}{Location}
 \newcommand{\school}[4]{
 	{\textbf{#1
