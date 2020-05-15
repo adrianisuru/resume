@@ -1,96 +1,5 @@
 \documentclass[hidelinks,11pt]{extarticle}
-
-%\usepackage{lstfiracode}
-%\usepackage[default]{sourcecodepro}
-%\usepackage{fontenc}
-%\usepackage{helvet}
-\usepackage{titlesec}
-\usepackage[margin=0.5in]{geometry}
-\usepackage{xspace}
-\usepackage{color}
-\usepackage[inline]{enumitem}
-\usepackage{xcolor}
-\usepackage{hyperref}
-
-\pagenumbering{gobble}
-
-\newlist{citemize}{itemize}{1}
-\setlist[citemize]{label=\textcolor{itemizecolor}{\textbullet},topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*}
-
-\newlist{citemize*}{itemize*}{1}
-\setlist[citemize*]{label=\textcolor{itemizecolor}{\textbullet},topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,leftmargin=*}
-
-\renewcommand{\familydefault}{\sfdefault}
-\definecolor{mycolor}{RGB}{11, 83, 148}
-%\definecolor{mycolor}{RGB}{200, 83, 100}
-
-\colorlet{itemizecolor}{mycolor}
-
-\let\boringbullet\bullet
-\renewcommand{\bullet}{\color{mycolor}{\boringbullet}}
-
-%\let\boringtitlerule\titlerule
-%\renewcommand{\titlerule}{\color{mycolor}{\titlerule}}
-
-
-\titleformat{\section}
-{\large\bfseries\color{mycolor}}
-{}
-{0em}
-{}[\titlerule]
-
-\titleformat{\subsection}
-{\large\bfseries}
-{}
-{0em}
-{}
-
-\titlespacing{\section}
-{0pt}
-{5pt}
-{7pt}
-
-\titlespacing{\item}
-{0pt}
-{1pt}
-{1pt}
-
-% usage: \school{Name}{Location}
-\newcommand{\school}[4]{
-	{\textbf{#1
-    $\bullet$
-     #3
-    }}
-	\hfill{
-        {\small#2
-    $\bullet$
-    #4}
-    }
-}
-
-\newcommand{\position}[5]{
-    {\textbf{#1}} $\bullet$ {\textbf{#2}}
-	\hfill{\small#4 $\bullet$ #3}
-    \begin{citemize}
-        #5
-    \end{citemize}
-}
-
-\newcommand{\project}[3] {
-    \textbf{#1} 
-%    \hfill {\small#2}
-    \begin{citemize}
-    #3
-    \end{citemize}
-}
-
-\newcommand{\skillset}[2] {
-    \textbf{#1}
-    \hfill
-    \begin{citemize*}
-        #2
-    \end{citemize*}
-}
+\usepackage{ai-resume}
 
 \begin{document}
 
@@ -106,6 +15,7 @@ $\bullet$ %
 $\bullet$ %
 \href{tel:+1000-000-0000}{(000) 000 0000} %
 }
+
 \section{Experience}
 
 \position
@@ -217,12 +127,6 @@ $\bullet$ %
     \item[] Siebel Hacks (CoFounder and Treasurer) 
     \item Varsity Men's Glee Club (Baritone)
 \end{citemize*}
-
-%\textit{Minor, Music}
-%\hfill{gpa: 3.12}
-%\vspace{0.5em}
-%\vfill
-
 
 \section{Technical Skills}
 \skillset{Languages}
