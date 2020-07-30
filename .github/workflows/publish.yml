@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build
-      run: docker run --rm -v $PWD:/workdir:z ivanpondal/alpine-latex pdflatex resume.tex
+      run: docker run --rm -v $PWD:/workdir:z ivanpondal/alpine-latex lualatex resume.tex
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v1-release
       with:
