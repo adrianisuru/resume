@@ -13,90 +13,7 @@
 
 {\small\input{links.tex}}
 
-\section{Experience}
 
-\position
-{Subawu+}
-{Software Architect}
-{Aug 19 {\color{mycolor}/} Dec 19}
-{Urbana, IL}
-{
-\item Designed containerized architecture for a mobile platform which connects 
-    students to study partners
-\item Bootstrapped kubernetes cluster for easy deployment (Helm, CertManager, nginx)
-}
-
-\position
-{Fulcrum GT}
-{Junior Associate}
-{May 19 {\color{mycolor}/} Aug 19}
-{Chicago, IL}
-{
-    \item Designed and built Java backend which interfaced with 
-            the Amadeus API 
-    for a mobile app which suggests
-        flights and hotels based on individual preferences, company policy,
-        and team requirements 
-    which was presented at ILTACON, the premier educational and networking 
-        event for the legal sector (Java/Dropwizard, Postgres, REST)
-    \item Deployed product website and backend on kubernetes (Docker, Kubernetes)
-}
-
-\position
-{Fulcrum GT}
-{Summer Associate}
-{May 18 {\color{mycolor}/} Aug 18}
-{Chicago, IL}
-{
-    \item Built user registration / login system for a Flask backend 
-    for a web app which helps users appeal their property tax assessment 
-    which was presented at ILTACON (Python/Flask, Postgres, REST)
-    \item Deployed webapp frontend and backend on kubernetes (Docker, Kubernetes)
-}
-
-\position
-{CS 126}
-{TA}
-{Aug 18 {\color{mycolor}/} Oct 19}
-{Urbana, IL}
-{
-    \item Led discussions of student code with emphasis on style, design, and
-        testing in weekly code review sessions of 6 students
-    \item Helped students with Java/C++ toolchain, git, and bash command line in
-        office hours
-}
-
-
-\section{Projects}
-
-\project{Essential Tasks ToDo List}{Dart}
-{
-    \item Flutter based app built for roommate who suffers from an executive 
-        function disorder and poor working memory to help keep track of essential 
-        tasks such as eating and bathing (Flutter, SQLite)
-    \item App state is saved locally (SQLite)
-}
-%
-\project{Esim}{Java}
-{
-    \item 3D Coulomb's Law visualization built for physics teacher (Java, OpenGL/GLSL)
-    \item Allows users to place point charges in a plane and see a 3D graph of the electric potential at each point in the plane}
-
-\project{Julia Set Explorer}{Rust}
-{
-    \item Julia set viewer with pan and zoom capabilities (Rust, OpenGL/GLSL)
-    \item Fractal is colored by OpenGL shaders to maximize performace (GLSL)
-    \item Contributed a pull request to glium/glium
-}
-
-\project{Genetic Algorithm Image Evolution}{C++}
-{
-    \item Genetic algorithm which recreates a user provide image using simple 
-        shapes (C++, openFrameworks)
-}
-
-
-%\vfill
 
 \section{Education}
 \school
@@ -106,39 +23,116 @@
 {2021}
 \\
 \textbf{Coursework:} 
-\begin{citemize*}
-    \item[] Data Structures 
-    \item Algorithms 
-    \item Software Design Studio 
-    \item Models of Computation 
-    \item Computer Architecture
-    \item Abstract Linear Algebra 
+\begin{itemize*}
+    \item[] Algorithms
     \item Probability Theory 
-    \item Graph Theory 
-    \item Differential Equations
-    \item Real Analysis 
-\end{citemize*}
-
+    \item Numerical Analysis
+    \item Production Computer Graphics
+\end{itemize*}
 \textbf{Extracurriculars:} 
-\begin{citemize*}
-    \item[] Siebel Hacks (CoFounder and Treasurer) 
+\begin{itemize*}
+    \item[] Siebel Hacks (CoFounder Treasurer) 
     \item Varsity Men's Glee Club (Baritone)
-\end{citemize*}
+\end{itemize*}
 
-\section{Technical Skills}
+
+
+\section{Professional History}
+
+\position{Verdova}{Software Engineer}{Since Jun `21 }{Remote}
+\position{Subawu+}{Software Architect}{Aug `19 {\color{mycolor}/} Dec `19}{Urbana, IL}
+\position{Fulcrum GT}{Junior Engineering Associate}{May `18 {\color{mycolor}/} Aug `19}{Chicago, IL}
+\position{CS 126}{TA}{Aug `18 {\color{mycolor}/} Oct `19}{Urbana, IL}
+
+\section{Projects}
+
+\project{Insurance Optimization Engine}{Professional (Verdova)}
+{
+    \item A tool which finds optimal combinations of USDA insurance products and commodity options
+    to minimize risk and maximize returns for growers (Python, Postgres)
+    \item Responsible for: 
+    \begin{itemize}
+        \item Turning a 77 page USDA specification into a working insurance premium calculator
+        \item Gathering input from industry experts
+        \item Knowledge brokering once this project was re-scoped into a separate company
+    \end{itemize}
+}
+
+\project{Grower Portal}{Professional (Verdova)}
+{
+    \item Web app which allows growers to connect their data with Verdova, visualize their data (through maps, charts, tables),
+    and enroll in data deals (Python/Django, John Deere API, JavaScript/Svelte, Postgres)
+    \item Responsible for: 
+    \begin{itemize}
+        \item API layer (djangorestframework)---acts as liaison between the database, John Deere API, and frontend, 
+        can be replicated as needed to support an increase in users
+        \item Reducing database accesses (\texttt{select\_related}, \texttt{prefetch\_related}, \texttt{assertNumQueries})
+    \end{itemize}
+   
+}
+
+\project{Ray Tracer}{Academic (Production Computer Graphics)}
+{
+    \item Ray tracer with jittering, BVH (Rust)
+    \item Orthographic and perspective modes supported
+}
+
+\project{Dispatch}{Professional (Fulcrum GT)}
+{
+    \item Mobile app which suggests flights and hotels based on individual preferences,
+    company policy, team requirements---intended for teams of business professionals 
+    (ex. management consultants) (Java/Dropwizard, Amadeus API, Postgres)
+    \item Responsible for: crud backend (return user state \& such), 
+    business logic (generate flight, hotel itineraries / suggestions)
+    \item Dispatch was demoed at ILTACON (major legal sector networking event)
+    where it received moderate interest
+}
+
+\project{Essential Tasks ToDo List}{Personal}
+{
+    \item Flutter based app built for roommate who suffers from an executive 
+        function disorder and poor working memory to help keep track of essential 
+        tasks such as eating and bathing (Flutter, SQLite)
+    \item App state is saved locally (SQLite)
+}
+%
+\project{Esim}{Personal}
+{
+    \item 3D Coulomb's Law visualization built for physics teacher (Java, OpenGL/GLSL)
+    % \item Allows users to place point charges in a plane and see a 3D graph of the electric potential at each point in the plane
+}
+
+% \project{Julia Set Explorer}{Personal}
+% {
+%     \item Julia set viewer with pan and zoom capabilities (Rust, OpenGL/GLSL)
+%     \item Fractal is colored by OpenGL shaders to maximize performace (GLSL)
+%     \item Contributed a pull request to glium/glium
+% }
+
+% \project{Genetic Algorithm Image Evolution}{Acedemic (Software Design Studio)}
+% {
+%     \item Genetic algorithm which recreates a user provide image using simple 
+%         shapes (C++, openFrameworks)
+% }
+
+
+%\vfill
+
+
+\section{Technologies}
 \skillset{Languages}
 {
-    \item[] Java 
-    \item C++ 
+    \item[] Rust
     \item Python 
-    \item Rust
+    \item Java
+    \item Julia
+    \item C++
     \item Dart
 }
 
 \skillset{Frameworks}
 {
-    \item[] Flask
-    \item OpenGL/GLSL
+    \item[] Django (restframework)
     \item Dropwizard
     \item Flutter
 }
@@ -148,6 +142,7 @@
     \item[] Linux
     \item Docker
     \item Kubernetes
+    \item ControlPlane
     \item \LaTeX
     \item SQL
 }

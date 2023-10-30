@@ -8,11 +8,16 @@
 
 \pagenumbering{gobble}
 
-\newlist{citemize}{itemize}{1}
-\setlist[citemize]{label=\textcolor{itemizecolor}{$\bullet$},topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*}
+\renewcommand{\labelitemi}{$\textcolor{itemizecolor}{\bullet}$}
+\renewcommand{\labelitemii}{$\textcolor{itemizecolor}{\bullet}$}
+\renewcommand{\labelitemiii}{$\textcolor{itemizecolor}{\diamond}$}
+\renewcommand{\labelitemiv}{$\textcolor{itemizecolor}{\ast}$}
 
-\newlist{citemize*}{itemize*}{1}
-\setlist[citemize*]{label=\textcolor{itemizecolor}{$\bullet$},topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,leftmargin=*}
+% \newlist{itemize}{itemize}{1}
+% \setlist[itemize]{label=$\textcolor{itemizecolor}{\bullet}$,topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*}
+
+% \newlist{itemize*}{itemize*}{1}
+% \setlist[itemize*]{label=$\textcolor{itemizecolor}{\bullet}$,topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,leftmargin=*}
 
 \definecolor{mycolor}{HTML}{5e81ac}
 %\definecolor{mycolor}{RGB}{200, 83, 100}
@@ -52,7 +57,7 @@
     \href{mailto:#1}{#1}
 }
 
-\newcommand{\phone}[4]{\href{tel:+#1#2-#3-#4}{(#2) #3 #4}}
+\newcommand{\phone}[4]{\href{tel:+#1#2-#3-#4}{+#1 (#2) #3 #4}}
 
 % usage: \school{Name}{Location}
 \newcommand{\school}[4]{
@@ -67,27 +72,29 @@
     }
 }
 
-\newcommand{\position}[5]{
+\newcommand{\position}[4]{
     {\textbf{#1}} $\bullet$ {\textbf{#2}}
 	\hfill{\small#4 $\bullet$ #3}
-    \begin{citemize}
-        #5
-    \end{citemize}
+    \\
+    % \begin{itemize}[topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*]
+    %     #5
+    % \end{itemize}
 }
 
 \newcommand{\project}[3] {
     \textbf{#1} 
-%    \hfill {\small#2}
-    \begin{citemize}
-    #3
-    \end{citemize}
+    \hfill {\small#2}
+    \begin{itemize}[topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*]
+        #3
+    \end{itemize}
+
 }
 
 \newcommand{\skillset}[2] {
     \textbf{#1}
     \hfill
-    \begin{citemize*}
+    \begin{itemize*}
         #2
-    \end{citemize*}
+    \end{itemize*}
 }
 
