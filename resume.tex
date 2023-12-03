@@ -1,8 +1,9 @@
-\documentclass[hidelinks]{scrartcl}
+\documentclass[hidelinks, 11pt]{scrartcl}
 \usepackage{ai-resume}
 \usepackage[margin=0.5in]{geometry}
 \input{font.tex}
 
+\renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
 \definecolor{textcolor}{HTML}{2e3440}
@@ -15,61 +16,82 @@
 
 
 
-\section{Education}
-\school
-{University of Illinois}
-{Urbana, Champaign}
-{Mathematics and Computer Science}
-{2021}
-\\
-\textbf{Coursework:} 
-\begin{itemize*}
-    \item[] Algorithms
-    \item Probability Theory 
-    \item Numerical Analysis
-    \item Production Computer Graphics
-\end{itemize*}
-\textbf{Extracurriculars:} 
-\begin{itemize*}
-    \item[] Siebel Hacks (CoFounder Treasurer) 
-    \item Varsity Men's Glee Club (Baritone)
-\end{itemize*}
 
 
 
-\section{Professional History}
 
-\position{Verdova}{Software Engineer}{Since Jun `21 }{Remote}
-\position{Subawu+}{Software Architect}{Aug `19 {\color{mycolor}/} Dec `19}{Urbana, IL}
-\position{Fulcrum GT}{Junior Engineering Associate}{May `18 {\color{mycolor}/} Aug `19}{Chicago, IL}
-\position{CS 126}{TA}{Aug `18 {\color{mycolor}/} Oct `19}{Urbana, IL}
+\section{Experience}
+
+\position{Isha Foundation {\color{mycolor}/} Save Soil}{Volunteer}{2023}{Coimbatore, India}{
+    \item Volunteered in various yoga and meditation programs, helped with daily operations at Isha Yoga Center
+    \item Helped lead daily Save Soil campaigns to increase awarness and generate support for the Save Soil movement
+}
+
+\position{Verdova}{Software Engineer}{2021-2023}{Peoria, IL}
+{
+    \item Built api-layer for web app which allows growers to connect their data with Verdova, visualize their data (through maps, charts, tables),
+    and enroll in data deals (Python/Django, Geospatial Data, John Deere API, JavaScript/Svelte, Postgres)
+
+    \item Reduced database accesses (\texttt{select\_related}, \texttt{prefetch\_related}, \texttt{assertNumQueries})
+
+    \item Worked on a tool which finds optimal combinations of USDA insurance products and commodity options
+    to minimize risk and maximize returns for growers (Python, Postgres)
+
+    \item Turned a 77 page USDA specification into a working insurance premium calculator
+
+    \item Met with industry experts for feedback on the insurance tool and knowledge brokered once the project was re-scoped into a separate company
+
+}
+
+% \project{Insurance Optimization Engine}{Professional (Verdova)}
+% {
+%     \item A tool which 
+%     \item Responsible for: 
+%     \begin{itemize}
+%         \item Turning a 77 page USDA specification into a working insurance premium calculator
+%         \item Gathering input from industry experts
+%         \item Knowledge brokering once this project was re-scoped into a separate company
+%     \end{itemize}
+% }
+
+% \project{Grower Portal}{Professional (Verdova)}
+% {
+%     \item Web app which allows growers to connect their data with Verdova, visualize their data (through maps, charts, tables),
+%     and enroll in data deals (Python/Django, Geospatial Data, John Deere API, JavaScript/Svelte, Postgres)
+%     \item Responsible for: 
+%     \begin{itemize}
+%         \item API layer (djangorestframework)---acts as liaison between the database, John Deere API, and frontend, 
+%         can be replicated as needed to support an increase in users
+%         \item Reducing database accesses (\texttt{select\_related}, \texttt{prefetch\_related}, \texttt{assertNumQueries})
+%     \end{itemize}
+   
+% }
+\position{Subawu+}{Software Architect}{2019}{Urbana, IL}
+{
+    \item Designed containerized architecture for a mobile platform which connects 
+    students to study partners
+    \item Bootstrapped kubernetes cluster for easy deployment (Helm, CertManager, nginx)
+}
+\position{Fulcrum GT}{Junior Engineer}{2018-2019}{Chicago, IL}
+{
+    \item Built backend for mobile app which suggests flights and hotels based on individual preferences,
+    company policy, team requirements---intended for teams of business professionals 
+    (ex. management consultants) (Java/Dropwizard, Amadeus API, Postgres)
+    \item Built user registration / login system for a Flask backend 
+    for a web app which helps users appeal their property tax assessment 
+    which was presented at ILTACON---the premier legal industry networking event (Python/Flask, Postgres, REST)
+}
+
+%\position{Fulcrum GT}{Summer Associate (Engineering)}{May `18 {\color{mycolor}/} Aug `18}{Chicago, IL}
+\position{University of Illinois}{Teaching Assistant (Software Design Studio)}{2018-2019}{Urbana, IL}
+{
+    \item Led discussions of student code with emphasis on style, design, and
+        testing in weekly code review sessions of 6 students
+    \item Helped students with Java/C++ toolchain, git, and bash command line in
+        office hours
+}
 
 \section{Projects}
-
-\project{Insurance Optimization Engine}{Professional (Verdova)}
-{
-    \item A tool which finds optimal combinations of USDA insurance products and commodity options
-    to minimize risk and maximize returns for growers (Python, Postgres)
-    \item Responsible for: 
-    \begin{itemize}
-        \item Turning a 77 page USDA specification into a working insurance premium calculator
-        \item Gathering input from industry experts
-        \item Knowledge brokering once this project was re-scoped into a separate company
-    \end{itemize}
-}
-
-\project{Grower Portal}{Professional (Verdova)}
-{
-    \item Web app which allows growers to connect their data with Verdova, visualize their data (through maps, charts, tables),
-    and enroll in data deals (Python/Django, John Deere API, JavaScript/Svelte, Postgres)
-    \item Responsible for: 
-    \begin{itemize}
-        \item API layer (djangorestframework)---acts as liaison between the database, John Deere API, and frontend, 
-        can be replicated as needed to support an increase in users
-        \item Reducing database accesses (\texttt{select\_related}, \texttt{prefetch\_related}, \texttt{assertNumQueries})
-    \end{itemize}
-   
-}
 
 \project{Ray Tracer}{Academic (Production Computer Graphics)}
 {
@@ -77,26 +99,14 @@
     \item Orthographic and perspective modes supported
 }
 
-\project{Dispatch}{Professional (Fulcrum GT)}
-{
-    \item Mobile app which suggests flights and hotels based on individual preferences,
-    company policy, team requirements---intended for teams of business professionals 
-    (ex. management consultants) (Java/Dropwizard, Amadeus API, Postgres)
-    \item Responsible for: crud backend (return user state \& such), 
-    business logic (generate flight, hotel itineraries / suggestions)
-    \item Dispatch was demoed at ILTACON (major legal sector networking event)
-    where it received moderate interest
-}
-
 \project{Essential Tasks ToDo List}{Personal}
 {
     \item Flutter based app built for roommate who suffers from an executive 
         function disorder and poor working memory to help keep track of essential 
-        tasks such as eating and bathing (Flutter, SQLite)
-    \item App state is saved locally (SQLite)
+        tasks such as eating and bathing (Flutter)
 }
 %
-\project{Esim}{Personal}
+\project{Electrostatics Simulator}{Personal}
 {
     \item 3D Coulomb's Law visualization built for physics teacher (Java, OpenGL/GLSL)
     % \item Allows users to place point charges in a plane and see a 3D graph of the electric potential at each point in the plane
@@ -118,6 +128,25 @@
 
 %\vfill
 
+\section{Education}
+\school
+{University of Illinois}
+{Urbana, Champaign}
+{Mathematics and Computer Science}
+{2017-2021}
+\textbf{Coursework:} 
+\begin{itemize*}
+    \item[] Algorithms
+    \item Probability Theory 
+    \item Numerical Analysis
+    \item Production Computer Graphics
+\end{itemize*}
+
+\textbf{Extracurriculars:} 
+\begin{itemize*}
+    \item[] Siebel Hacks (CoFounder, Treasurer) 
+    \item Varsity Men's Glee Club (Baritone)
+\end{itemize*}
 
 \section{Technologies}
 \skillset{Languages}
@@ -133,6 +162,7 @@
 \skillset{Frameworks}
 {
     \item[] Django (restframework)
+    \item Svelte
     \item Dropwizard
     \item Flutter
 }

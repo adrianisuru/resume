@@ -13,6 +13,8 @@
 \renewcommand{\labelitemiii}{$\textcolor{itemizecolor}{\diamond}$}
 \renewcommand{\labelitemiv}{$\textcolor{itemizecolor}{\ast}$}
 
+\setlist{topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,leftmargin=*}
+
 % \newlist{itemize}{itemize}{1}
 % \setlist[itemize]{label=$\textcolor{itemizecolor}{\bullet}$,topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*}
 
@@ -70,21 +72,24 @@
     $\bullet$
     #4}
     }
+    \vspace{0.3em}
+
 }
 
-\newcommand{\position}[4]{
+\newcommand{\position}[5]{
     {\textbf{#1}} $\bullet$ {\textbf{#2}}
 	\hfill{\small#4 $\bullet$ #3}
     \\
-    % \begin{itemize}[topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*]
-    %     #5
-    % \end{itemize}
+    \begin{itemize}
+        #5
+    \end{itemize}
+    \vspace{0.5em}
 }
 
 \newcommand{\project}[3] {
     \textbf{#1} 
-    \hfill {\small#2}
-    \begin{itemize}[topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*]
+    %\hfill {\small#2}
+    \begin{itemize}%[topsep=0pt,itemsep=0pt,parsep=1pt,partopsep=0pt,after=\vspace{0.5em},leftmargin=*]
         #3
     \end{itemize}
 
